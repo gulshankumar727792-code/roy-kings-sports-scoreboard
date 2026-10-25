@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roy Kings Sports | Cricket Scoreboard</title>
+<style>
+:root{--bg:#07111f;--panel:#101f32;--panel2:#162941;--gold:#ffbf3f;--text:#f5f7fb;--muted:#a9b8ca;--green:#38d996;--red:#ff6374}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#07111f,#0b1b2d 55%,#111a2b);color:var(--text);font-family:Arial,Helvetica,sans-serif}button,input,select{font:inherit}button{border:0;border-radius:10px;padding:11px 13px;font-weight:700;cursor:pointer;background:var(--gold);color:#111827}button.secondary{background:#243850;color:#fff;border:1px solid #39516c}button.danger{background:#a92c42;color:white}button.green{background:#148b65;color:white}.wrap{max-width:1100px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.brand{font-weight:900;letter-spacing:1px;font-size:20px}.brand span{color:var(--gold)}.sub{color:var(--muted);font-size:12px;margin-top:4px}.tag{border:1px solid #344a63;border-radius:99px;padding:7px 10px;color:var(--gold);font-size:11px;font-weight:bold}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.panel{background:rgba(16,31,50,.96);border:1px solid #263c55;border-radius:16px;padding:15px;margin-bottom:14px;box-shadow:0 8px 25px #0002}.panel h2,.panel h3{margin:0 0 12px}.muted{color:var(--muted)}.scorehero{background:linear-gradient(110deg,#142b46,#1a304a);border-radius:14px;padding:16px;border:1px solid #3b526d}.teams{display:flex;justify-content:space-between;gap:12px;align-items:center}.teamname{font-size:13px;color:#d6e2ef;font-weight:bold}.score{font-size:36px;font-weight:900;letter-spacing:.5px;margin:6px 0}.overs{font-size:13px;color:#c4d0dd}.runrate{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;color:#c5d2df;font-size:12px}.players{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.player{display:flex;align-items:center;gap:10px;background:#0a1929;border-radius:12px;padding:9px;min-width:0}.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#263d55;border:2px solid #405974;flex-shrink:0}.pname{font-weight:800;font-size:13px;overflow-wrap:anywhere}.pstats{color:var(--muted);font-size:12px;margin-top:4px}.controls{display:flex;gap:8px;flex-wrap:wrap}.controls button{flex:1;min-width:58px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}.field label{font-size:12px;color:var(--muted)}input,select{width:100%;padding:11px;border-radius:9px;border:1px solid #344a63;background:#081626;color:white;outline:none}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.tabs button{background:#1c3047;color:#dbe7f5}.tabs button.active{background:var(--gold);color:#111827}.hide{display:none!important}.listrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #273c52}.listrow:last-child{border-bottom:0}.playerline{display:flex;align-items:center;gap:9px}.mini{width:36px;height:36px;border-radius:50%;object-fit:cover;background:#263d55}.pill{display:inline-block;padding:4px 8px;border-radius:7px;background:#203a55;color:#d7e8fa;font-size:11px}.adpreview{min-height:150px;border-radius:12px;background:#091727;border:1px dashed #52677d;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;overflow:hidden}.adpreview img{max-width:100%;max-height:300px;object-fit:contain}.foot{text-align:center;color:#8195ab;font-size:11px;padding:10px}.overlay{position:fixed;inset:0;background:#02060c;color:#fff;z-index:10;display:flex;align-items:center;justify-content:center;padding:3vw}.overlaycard{width:100%;max-width:1300px;border:2px solid #dca62e;background:linear-gradient(110deg,#08182a,#122c46);border-radius:18px;overflow:hidden}.ovtop{background:#e9aa26;color:#101827;display:flex;justify-content:space-between;padding:12px 18px;font-weight:900}.ovbody{padding:20px}.ovscore{font-size:clamp(30px,6vw,72px);font-weight:900}.ovplayers{display:grid;grid-template-columns:1fr 1fr;gap:15px}.ovplayer{display:flex;align-items:center;gap:12px;background:#071321;border-radius:12px;padding:12px}.ovplayer img{width:clamp(50px,7vw,90px);height:clamp(50px,7vw,90px);border-radius:50%;object-fit:cover}.ovname{font-size:clamp(13px,2vw,24px);font-weight:900}.ovstat{font-size:clamp(12px,1.7vw,20px);color:#cbd9e8;margin-top:5px}.fullad{position:fixed;inset:0;background:#03070d;z-index:20;display:flex;align-items:center;justify-content:center}.fullad img{width:100%;height:100%;object-fit:contain}.fullad .adlabel{position:absolute;left:12px;bottom:12px;background:#000b;padding:8px 12px;border-radius:8px;color:#fff}.fullad .closead{position:absolute;right:14px;top:14px}.xi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.xi-item{display:flex;align-items:center;gap:8px;background:#0b1a2a;padding:8px;border-radius:10px}.scoretable{width:100%;border-collapse:collapse;font-size:13px}.scoretable th,.scoretable td{text-align:left;padding:9px 6px;border-bottom:1px solid #2b4057}.scoretable th{color:#b6c6d7;font-size:11px}.notice{font-size:12px;line-height:1.5;color:#bdcad8;background:#0a1929;padding:10px;border-radius:10px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.wrap{padding:10px}.brand{font-size:17px}.score{font-size:31px}.players{grid-template-columns:1fr 1fr}.panel{padding:12px}.top{align-items:flex-start}.xi-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="app" class="wrap">
+  <header class="top"><div><div class="brand">ROY <span>KINGS</span> SPORTS</div><div class="sub">LIVE CRICKET SCOREBOARD • BETA VERSION</div></div><div class="tag">TENNIS BALL CRICKET</div></header>
+  <div class="tabs" id="tabs">
+    <button class="active" data-tab="live">Live Score</button><button data-tab="manage">Scoring Control</button><button data-tab="xi">Playing XI</button><button data-tab="card">Full Scorecard</button><button data-tab="ads">Sponsor Ads</button>
+  </div>
+  <section id="tab-live">
+    <div class="panel">
+      <div class="scorehero">
+        <div class="teams"><div><div class="teamname" id="batTeamLabel">GULSHAN XI</div><div class="score"><span id="runs">0</span>/<span id="wickets">0</span></div><div class="overs" id="overs">0.0 overs</div></div><div style="text-align:right"><div class="pill" id="inningsLabel">1ST INNINGS</div><div style="font-size:13px;margin-top:10px" id="targetText">Target: —</div></div></div>
+        <div class="runrate"><span>CRR <b id="crr">0.00</b></span><span>Extras <b id="extras">0</b></span><span>Last ball <b id="lastBall">—</b></span></div>
+      </div>
+      <div class="players">
+        <div class="player"><img id="strikerPhoto" class="avatar" src="" alt="Batter"><div><div class="pname" id="strikerName">Batter 1</div><div class="pstats"><b id="strikerRuns">0</b> runs • <span id="strikerBalls">0</span> balls</div><span class="pill">ON STRIKE</span></div></div>
+        <div class="player"><img id="nonPhoto" class="avatar" src="" alt="Batter"><div><div class="pname" id="nonName">Batter 2</div><div class="pstats"><b id="nonRuns">0</b> runs • <span id="nonBalls">0</span> balls</div></div></div>
+        <div class="player"><img id="bowlerPhoto" class="avatar" src="" alt="Bowler"><div><div class="pname" id="bowlerName">Bowler</div><div class="pstats"><b id="bowlerRuns">0</b> runs conceded • <span id="bowlerWkts">0</span> wickets</div></div></div>
+        <div class="player"><div class="avatar" style="display:grid;place-items:center;font-weight:900;color:var(--gold)">RKS</div><div><div class="pname">ROY KINGS SPORTS</div><div class="pstats">Live coverage</div><span class="pill">TENNIS BALL</span></div></div>
+      </div>
+    </div>
+    <div class="panel"><h3>Recent Balls</h3><div id="recentBalls" class="controls"><span class="pill">No balls yet</span></div></div>
+    <div class="panel"><h3>Live overlay link</h3><div class="notice">Website publish hone ke baad is URL mein <b>?overlay=1</b> jodkar scoreboard-only view kholna. Is starter version mein controls aur overlay same browser storage use karte hain; alag devices se live sync agle setup step mein add karenge.</div></div>
+  </section>
+  <section id="tab-manage" class="hide">
+    <div class="grid">
+      <div class="panel"><h2>Match Setup</h2>
+        <div class="field"><label>Batting team</label><input id="batTeam" value="Gulshan XI"></div>
+        <div class="field"><label>Bowling team</label><input id="bowlTeam" value="Ayush XI"></div>
+        <div class="row"><div class="field"><label>Overs per innings</label><input id="maxOvers" type="number" min="1" max="50" value="6"></div><div class="field"><label>Target (optional)</label><input id="target" type="number" min="0" placeholder="Leave blank"></div></div>
+        <button class="green" id="saveSetup">Save Match Setup</button>
+        <hr style="border-color:#2b4057;margin:16px 0">
+        <h3>Player details</h3>
+        <div class="field"><label>Striker name</label><input id="inStriker" value="Batter 1"></div><div class="field"><label>Striker photo URL (optional)</label><input id="inStrikerPhoto" placeholder="Paste image URL"></div>
+        <div class="field"><label>Non-striker name</label><input id="inNon" value="Batter 2"></div><div class="field"><label>Non-striker photo URL (optional)</label><input id="inNonPhoto" placeholder="Paste image URL"></div>
+        <div class="field"><label>Bowler name</label><input id="inBowler" value="Bowler"></div><div class="field"><label>Bowler photo URL (optional)</label><input id="inBowlerPhoto" placeholder="Paste image URL"></div>
+        <button id="savePlayers">Save Players</button>
+      </div>
+      <div class="panel"><h2>Manual Scoring</h2><p class="muted" style="font-size:12px">Har legal ball par score update karein. Wide / no-ball extras add karne ke liye neeche buttons use karein.</p>
+        <div class="controls"><button data-run="0">0</button><button data-run="1">+1</button><button data-run="2">+2</button><button data-run="3">+3</button><button data-run="4">+4</button><button data-run="6">+6</button></div>
+        <div class="controls" style="margin-top:9px"><button class="secondary" id="wicketBtn">WICKET</button><button class="secondary" id="wideBtn">WIDE +1</button><button class="secondary" id="noBallBtn">NO BALL +1</button><button class="secondary" id="byeBtn">BYE +1</button></div>
+        <div class="controls" style="margin-top:9px"><button class="secondary" id="swapBtn">Swap Batters</button><button class="secondary" id="undoBtn">Undo Last Ball</button></div>
+        <hr style="border-color:#2b4057;margin:16px 0">
+        <div class="row"><div class="field"><label>New batter after wicket</label><input id="newBatter" placeholder="Player name"></div><div class="field"><label>Photo URL (optional)</label><input id="newBatterPhoto" placeholder="Image URL"></div></div>
+        <button class="green" id="addBatter">Add New Batter</button>
+        <div class="controls" style="margin-top:12px"><button id="showAdBtn">Show Sponsor Ad</button><button id="showXiBtn" class="secondary">Show Playing XI</button><button id="showCardBtn" class="secondary">Show Full Scorecard</button></div>
+        <p style="font-size:11px;color:#91a4b8">Important: This is the first working prototype. Score data is saved in this browser only until we connect cloud sync.</p>
+      </div>
+    </div>
+  </section>
+  <section id="tab-xi" class="hide"><div class="panel"><h2>Playing XI</h2><div class="row"><div class="field"><label>Team 1 name</label><input id="xiTeam1" value="Gulshan XI"></div><div class="field"><label>Team 2 name</label><input id="xiTeam2" value="Ayush XI"></div></div><div class="row"><div class="field"><label>Team 1 players (one per line)</label><textarea id="xiPlayers1" rows="8" style="width:100%;background:#081626;color:white;border:1px solid #344a63;border-radius:9px;padding:10px">Batter 1
+Batter 2
+Player 3
+Player 4
+Player 5
+Player 6
+Player 7
+Player 8
+Player 9
+Player 10
+Player 11</textarea></div><div class="field"><label>Team 2 players (one per line)</label><textarea id="xiPlayers2" rows="8" style="width:100%;background:#081626;color:white;border:1px solid #344a63;border-radius:9px;padding:10px">Bowler
+Player 2
+Player 3
+Player 4
+Player 5
+Player 6
+Player 7
+Player 8
+Player 9
+Player 10
+Player 11</textarea></div></div><button id="saveXi">Save Playing XI</button><div id="xiPreview" class="xi-grid" style="margin-top:14px"></div></div></section>
+  <section id="tab-card" class="hide"><div class="panel"><h2>Full Scorecard</h2><h3 id="cardBatTitle">Gulshan XI Batting</h3><div style="overflow:auto"><table class="scoretable"><thead><tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th></tr></thead><tbody id="batTable"></tbody></table></div><h3 style="margin-top:20px" id="cardBowlTitle">Bowling</h3><div style="overflow:auto"><table class="scoretable"><thead><tr><th>Bowler</th><th>R</th><th>W</th><th>Overs</th></tr></thead><tbody id="bowlTable"></tbody></table></div></div></section>
+  <section id="tab-ads" class="hide"><div class="panel"><h2>Sponsor Ad Manager</h2><div class="field"><label>Sponsor name</label><input id="adName" placeholder="e.g. Rinki Digital X Ray"></div><div class="field"><label>Ad image URL</label><input id="adUrl" placeholder="Paste public image URL"></div><button id="saveAd">Save Sponsor Ad</button><div class="adpreview" id="adPreview">Ad preview will appear here</div><div class="controls" style="margin-top:12px"><button id="showAd2">Show Full-screen Ad</button><button class="secondary" id="hideAd">Hide Ad</button></div><p class="notice" style="margin-top:12px">Ad image URL filhaal public image link hona chahiye. Upload button/cloud image storage agle version mein add karenge.</p></div></section>
+  <div class="foot">ROY KINGS SPORTS • Made for local tennis-ball cricket • Prototype v1</div>
+</div>
+<div id="overlay" class="overlay hide"><div class="overlaycard"><div class="ovtop"><span>ROY KINGS SPORTS</span><span id="ovInnings">LIVE SCORE</span></div><div class="ovbody"><div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap"><div><div id="ovTeam" style="font-size:clamp(14px,2.2vw,25px);font-weight:900">GULSHAN XI</div><div class="ovscore"><span id="ovRuns">0</span>/<span id="ovWkts">0</span></div><div id="ovOvers">0.0 overs</div></div><div style="text-align:right"><div style="color:#ffbf3f;font-weight:900">CRR <span id="ovCrr">0.00</span></div><div id="ovTarget">TARGET —</div></div></div><div class="ovplayers" style="margin-top:18px"><div class="ovplayer"><img id="ovStrikerPhoto" alt=""><div><div class="ovname" id="ovStriker">Batter 1</div><div class="ovstat" id="ovStrikerStat">0 (0)</div></div></div><div class="ovplayer"><img id="ovBowlerPhoto" alt=""><div><div class="ovname" id="ovBowlerName">Bowler</div><div class="ovstat" id="ovBowlerStat">0 runs • 0 wickets</div></div></div></div></div></div></div>
+<div id="fullAd" class="fullad hide"><img id="fullAdImg" alt="Sponsor ad"><div class="adlabel" id="fullAdLabel">SPONSORED</div><button class="closead" id="closeFullAd">✕ Close</button></div>
+<script>
+const $=id=>document.getElementById(id);
+const defaultState={batTeam:"Gulshan XI",bowlTeam:"Ayush XI",maxOvers:6,target:"",runs:0,wickets:0,balls:0,extras:0,lastBall:"—",striker:{name:"Batter 1",photo:"",runs:0,balls:0,fours:0,sixes:0},non:{name:"Batter 2",photo:"",runs:0,balls:0,fours:0,sixes:0},bowler:{name:"Bowler",photo:"",runs:0,wickets:0,balls:0},batters:[],bowlers:[],history:[],recent:[],xi1:[],xi2:[],xiTeam1:"Gulshan XI",xiTeam2:"Ayush XI",adName:"",adUrl:""};
+let s;
+try{s=Object.assign({},defaultState,JSON.parse(localStorage.getItem("rks-score-v1")||"{}"));}catch(e){s={...defaultState}}
+function save(){localStorage.setItem("rks-score-v1",JSON.stringify(s));render()}
+function snap(){s.history.push(JSON.stringify({...s,history:[]}));if(s.history.length>30)s.history.shift()}
+function ensureBatter(p){if(!s.batters.some(x=>x.name===p.name))s.batters.push({...p})}
+function ensureBowler(){if(!s.bowlers.some(x=>x.name===s.bowler.name))s.bowlers.push({...s.bowler})}
+function updateBatter(p,r,legal){p.runs+=r;if(legal)p.balls++;if(r===4)p.fours++;if(r===6)p.sixes++}
+function legalBall(r,label){snap();s.runs+=r;s.bowler.runs+=r;s.balls++;s.bowler.balls++;updateBatter(s.striker,r,true);s.lastBall=label;s.recent.unshift(label);s.recent=s.recent.slice(0,8);ensureBatter(s.striker);ensureBatter(s.non);ensureBowler();if(r%2===1)swap(false);if(s.balls%6===0)swap(false);save()}
+function swap(doSave=true){[s.striker,s.non]=[s.non,s.striker];if(doSave)save()}
+function extra(kind){snap();let r=1;s.runs++;s.extras++;s.bowler.runs++;s.lastBall=kind;s.recent.unshift(kind);s.recent=s.recent.slice(0,8);if(kind==="BYE"){s.balls++;s.bowler.balls++;s.striker.balls++;if(s.balls%6===0)swap(false)}else if(kind==="WIDE"){/* illegal delivery */}else{/* no-ball illegal delivery */}ensureBatter(s.striker);ensureBatter(s.non);ensureBowler();save()}
+function wicket(){snap();s.wickets++;s.balls++;s.bowler.balls++;s.bowler.wickets++;s.striker.balls++;s.lastBall="W";s.recent.unshift("W");s.recent=s.recent.slice(0,8);ensureBatter(s.striker);ensureBatter(s.non);ensureBowler();save()}
+function photo(id,url){$(id).src=url||"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#20364e"/><circle cx="50" cy="36" r="18" fill="#91a4b8"/><path d="M15 100 Q18 62 50 62 Q82 62 85 100" fill="#91a4b8"/></svg>')}
+function render(){ $("batTeamLabel").textContent=s.batTeam.toUpperCase();$("runs").textContent=s.runs;$("wickets").textContent=s.wickets;$("overs").textContent=Math.floor(s.balls/6)+"."+(s.balls%6)+" overs";$("crr").textContent=s.balls?(s.runs/(s.balls/6)).toFixed(2):"0.00";$("extras").textContent=s.extras;$("lastBall").textContent=s.lastBall;$("targetText").textContent=s.target?"Target: "+s.target:"Target: —";$("inningsLabel").textContent="1ST INNINGS";
+$("strikerName").textContent=s.striker.name;$("strikerRuns").textContent=s.striker.runs;$("strikerBalls").textContent=s.striker.balls;photo("strikerPhoto",s.striker.photo);$("nonName").textContent=s.non.name;$("nonRuns").textContent=s.non.runs;$("nonBalls").textContent=s.non.balls;photo("nonPhoto",s.non.photo);$("bowlerName").textContent=s.bowler.name;$("bowlerRuns").textContent=s.bowler.runs;$("bowlerWkts").textContent=s.bowler.wickets;photo("bowlerPhoto",s.bowler.photo);
+$("recentBalls").innerHTML=s.recent.length?s.recent.map(x=>'<span class="pill">'+esc(x)+'</span>').join(""):'<span class="pill">No balls yet</span>';
+$("ovTeam").textContent=s.batTeam.toUpperCase();$("ovRuns").textContent=s.runs;$("ovWkts").textContent=s.wickets;$("ovOvers").textContent=Math.floor(s.balls/6)+"."+(s.balls%6)+" overs";$("ovCrr").textContent=s.balls?(s.runs/(s.balls/6)).toFixed(2):"0.00";$("ovTarget").textContent=s.target?"TARGET "+s.target:"";$("ovInnings").textContent="LIVE SCORE";$("ovStriker").textContent=s.striker.name;$("ovStrikerStat").textContent=s.striker.runs+" ("+s.striker.balls+")";$("ovBowlerName").textContent=s.bowler.name;$("ovBowlerStat").textContent=s.bowler.runs+" runs • "+s.bowler.wickets+" wickets";photo("ovStrikerPhoto",s.striker.photo);photo("ovBowlerPhoto",s.bowler.photo);
+$("cardBatTitle").textContent=s.batTeam+" Batting";$("cardBowlTitle").textContent=s.bowlTeam+" Bowling";$("batTable").innerHTML=[...s.batters,s.striker,s.non].filter((p,i,a)=>a.findIndex(q=>q.name===p.name)===i).map(p=>`<tr><td>${esc(p.name)}</td><td>${p.runs||0}</td><td>${p.balls||0}</td><td>${p.fours||0}</td><td>${p.sixes||0}</td></tr>`).join("");$("bowlTable").innerHTML=[...s.bowlers,s.bowler].filter((p,i,a)=>a.findIndex(q=>q.name===p.name)===i).map(p=>`<tr><td>${esc(p.name)}</td><td>${p.runs||0}</td><td>${p.wickets||0}</td><td>${Math.floor((p.balls||0)/6)+"."+(p.balls||0)%6}</td></tr>`).join("");
+$("adName").value=s.adName||"";$("adUrl").value=s.adUrl||"";$("adPreview").innerHTML=s.adUrl?'<img src="'+esc(s.adUrl)+'" alt="Ad preview"><div>'+esc(s.adName)+'</div>':"Ad preview will appear here";renderXi()}
+function renderXi(){let a=s.xi1.length?s.xi1:["Batter 1","Batter 2","Player 3","Player 4","Player 5","Player 6","Player 7","Player 8","Player 9","Player 10","Player 11"],b=s.xi2.length?s.xi2:["Bowler","Player 2","Player 3","Player 4","Player 5","Player 6","Player 7","Player 8","Player 9","Player 10","Player 11"];$("xiPreview").innerHTML='<div><h3>'+esc(s.xiTeam1)+'</h3>'+a.map(n=>'<div class="xi-item"><div class="mini" style="display:grid;place-items:center">🏏</div><b>'+esc(n)+'</b></div>').join("")+'</div><div><h3>'+esc(s.xiTeam2)+'</h3>'+b.map(n=>'<div class="xi-item"><div class="mini" style="display:grid;place-items:center">🏏</div><b>'+esc(n)+'</b></div>').join("")+'</div>'}
+function esc(x){return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x===b));["live","manage","xi","card","ads"].forEach(t=>$("tab-"+t).classList.toggle("hide",t!==b.dataset.tab));}));
+document.querySelectorAll("[data-run]").forEach(b=>b.addEventListener("click",()=>legalBall(+b.dataset.run,String(b.dataset.run))));
+$("saveSetup").onclick=()=>{s.batTeam=$("batTeam").value||"Team 1";s.bowlTeam=$("bowlTeam").value||"Team 2";s.maxOvers=+$("maxOvers").value||6;s.target=$("target").value;save();alert("Match setup saved")};
+$("savePlayers").onclick=()=>{s.striker.name=$("inStriker").value||"Batter 1";s.striker.photo=$("inStrikerPhoto").value;s.non.name=$("inNon").value||"Batter 2";s.non.photo=$("inNonPhoto").value;s.bowler.name=$("inBowler").value||"Bowler";s.bowler.photo=$("inBowlerPhoto").value;ensureBatter(s.striker);ensureBatter(s.non);ensureBowler();save();alert("Players saved")};
+$("wicketBtn").onclick=wicket;$("wideBtn").onclick=()=>extra("WIDE");$("noBallBtn").onclick=()=>extra("NO BALL");$("byeBtn").onclick=()=>extra("BYE");$("swapBtn").onclick=()=>swap(true);
+$("undoBtn").onclick=()=>{if(!s.history.length){alert("Undo ke liye koi ball nahi");return}let prev=JSON.parse(s.history.pop());prev.history=s.history;s=prev;save()};
+$("addBatter").onclick=()=>{let n=$("newBatter").value.trim();if(!n){alert("New batter ka naam likho");return}s.striker={name:n,photo:$("newBatterPhoto").value,runs:0,balls:0,fours:0,sixes:0};$("newBatter").value="";$("newBatterPhoto").value="";ensureBatter(s.striker);save();alert("New batter added as striker")};
+$("saveXi").onclick=()=>{s.xiTeam1=$("xiTeam1").value;s.xiTeam2=$("xiTeam2").value;s.xi1=$("xiPlayers1").value.split("\n").map(x=>x.trim()).filter(Boolean);s.xi2=$("xiPlayers2").value.split("\n").map(x=>x.trim()).filter(Boolean);save();alert("Playing XI saved")};
+$("saveAd").onclick=()=>{s.adName=$("adName").value;s.adUrl=$("adUrl").value;save();alert("Sponsor ad saved")};
+function showAd(){if(!s.adUrl){alert("Pehle Sponsor Ads tab mein ad image URL save karo");return}$("fullAdImg").src=s.adUrl;$("fullAdLabel").textContent=s.adName||"SPONSORED";$("fullAd").classList.remove("hide")}
+$("showAdBtn").onclick=showAd;$("showAd2").onclick=showAd;$("hideAd").onclick=()=>$("fullAd").classList.add("hide");$("closeFullAd").onclick=()=>$("fullAd").classList.add("hide");
+$("showXiBtn").onclick=()=>{document.querySelector('[data-tab="xi"]').click()};$("showCardBtn").onclick=()=>{document.querySelector('[data-tab="card"]').click()};
+if(new URLSearchParams(location.search).get("overlay")==="1"){$("app").classList.add("hide");$("overlay").classList.remove("hide");setInterval(()=>{try{let latest=JSON.parse(localStorage.getItem("rks-score-v1")||"{}");if(latest.runs!==undefined){s=Object.assign({},defaultState,latest);render()}}catch(e){}},1000)}
+render();
+</script>
+</body>
+</html>
